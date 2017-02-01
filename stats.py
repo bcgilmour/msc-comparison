@@ -10,31 +10,35 @@ selection = {}
 # empty satistic variables
 
 incomplete = []
-avg_prop_msc = 0
 msc_prop = {}
 adj_tot_prop = []
 
-# average proportion of measured groups
+# 1.1 average proportion of measured groups
 
-def prop_msc(part, counter, total):
+def proportion_calc(x, y, total):
 	avg = 0
 	n = 0
 	for i in selection:
-		non_res_prop.append(i[counter]
-		if i[part] != None:
-			average += (i[part] / i[total])
-			msc_prop.update(i:(i[part] / i[total]))
-			adj_tot_prop.append(1- i[counter])
+		non_res_prop.append(i[y]
+		if i[x] != None:
+			avg += (i[x] / i[total])
+			msc_prop.update(i:(i[x] / i[total]))
+			adj_tot_prop.append(1- i[y])
 			n += 1
 		else:
 			incomplete.append(i)
-		avg_prop_msc = average / n
 
-# total class compositions & final weight
+# 1.2 total class compositions & final weight
 
-def class_tot_weights(msc_prop):
+def weight_calc(msc_prop):
 	for i in msc_prop:
 		msc_prop[i] /= adj_tot_prop[i]
 		msc_prop[i] *= 0.25
 	return msc_prop
-
+				    
+# 2 personal income comparison (pure)
+				    
+def reported_income(prop):
+	total = 0
+	for i in selection:
+		total += i[prop]
