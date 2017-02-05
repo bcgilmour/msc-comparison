@@ -7,6 +7,13 @@
 # intiliase all as 1:
 	# increment_max = [ +.75(%); *1.25; /1.5; *1.25; +.75(%)... maybe...
 
+# current date
+
+import datetime
+date = str(datetime.date.today())
+curr_year = int(date[2:4])
+curr_month = int(date[5:7])
+
 # empty satistics
 
 stat_weight = 0.25
@@ -52,9 +59,15 @@ def income_prop(income):
 		# msc_prop.update(lab.append(lab[income] / total)) see above
 		filler = lab[income] / total
 		filler *= stat_weight
-		msc_prop[lab] =+ filler
-	filler = 0
+		msc_prop[lab] += filler
+		filler = 0
 
-# 3.1 most recent pub date config
+# 3.1 data conversion of recent pub date
 
-def pub_date(
+def pub_date(date):
+	first = 0
+	second = 0
+	for date in selection:
+		first = int(date[0:2])
+		second = int(date[3:])
+		
