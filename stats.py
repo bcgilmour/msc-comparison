@@ -87,7 +87,15 @@ def pub_weight():
 		
 # 4.1 post level of academic
 
-def level_weight():
+def level_weight(rank):
+	for lab in selection:
+		if lower(rank) == "professor":
+			msc_prop[lab] += stat_weight
+		elif lower(rank) == "assistant professor":
+			msc_prop[lab] += 0.20
+		else:
+			msc_prop[lab] += 0.10
+			
 
 # 5.1 adding personal interest
 		
