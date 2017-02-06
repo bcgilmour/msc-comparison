@@ -33,7 +33,7 @@ adj_tot_prop = []
 
 # 1.1 average proportion of measured groups
 
-def proportion_calc(x, y, total): # where x = students, y = non-research staff, total = lab total
+def proportion_calc(x, y, total): # where x = students col, y = non-research staff col, total = lab total col
 	avg = 0
 	for lab in selection:
 		# non_res_prop.append(i[y]) 	why is this here...
@@ -71,15 +71,15 @@ def income_weight(income):
 
 # 3.1 data conversion of recent pub date
 
-def pub_date(date):
+def pub_date(date): # assuming date is stored in the format yy/mm or yy.mm
 	year = int(lab[date[0:2]])
 	month = int(lab[date[3:]])
 
 # 3.2 weight of recent publication data
 	
 def pub_weight():	
-	for lab in selection: # assuming date is stored in the format yy/mm or yy.mm
-		year -= curr_year
+	for lab in selection: 
+		year = year - curr_year
 		month = abs(month - curr_month)
 		year *= year_weight
 		month *= month_weight
@@ -87,9 +87,14 @@ def pub_weight():
 		
 # 4.1 post level of academic
 
-def 
+def level_weight():
 
 # 5.1 adding personal interest
 		
-def 
+def interest_weight(interest):
+	for lab in selection:
+		filler = lab[interest] * stat_weight
+		msc_prop[lab] += filler
+		filler = 0
+
 		
