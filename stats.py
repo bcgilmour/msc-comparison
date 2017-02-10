@@ -87,3 +87,10 @@ def interest_weight(intr, d):
 		filler = lab[intr] * stat_weight
 		prop[lab] += filler
 		filler = 0
+		
+# 6.1 incomplete lab entries
+
+def incomplete():
+	print("The following labs are incomplete:")
+	for lab in range(0, len(incomplete - 1)):
+		print(incomplete[lab])
