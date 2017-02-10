@@ -55,3 +55,6 @@ class Selection(object):
 
 	def run_interest(self):
 		return s.interest_weight(self.intr)
+	
+	def run_incomplete(self):
+		return s.incomplete()
