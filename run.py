@@ -19,3 +19,8 @@ def run_stats(name):
 	name.run_date()
 	name.run_rank()
 	name.run_interest()
+
+def reset():
+	d = {}
+	xlsx = 0
+	options = 0
