@@ -6,4 +6,7 @@ name = 0
 def execute():
 	file = str(input("What file would you like to analyse?: "
 	name = input("What name would you like to give this selection?: "
-	
+	r.define(file, name)
+	r.reset()
+	file = 0
+	name = 0
