@@ -6,12 +6,12 @@ options = 0
 
 # importing data
 
-def define(file, name):
-	i.xlsx_import(file)
+def define(file_name):
+	i.xlsx_import(file_name)
 	d = i.pop_dict(xlsx, options, d)
-	name = i.Selection(d)
-	run_stats(name)
-	print(name.prop)
+	d = i.Selection(d)
+	run_stats(d)
+	print(d.prop)
 
 def run_stats(name):
 	name.run_prop()
